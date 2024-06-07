@@ -12,8 +12,8 @@ const ViewAll = () => {
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Title</th>
       <th scope="col">Author</th>
+      <th scope="col">Title</th>
       <th scope="col">Publish Year</th>
       <th scope="col">Price</th>
     </tr>
@@ -29,34 +29,34 @@ const ViewAll = () => {
     <tr>
       <th scope="row">2</th>
       <td>Jacob</td>
-      <td>Thornton</td>
+      <td>Rich dad poor dad</td>
       <td>2015</td>
       <td>450</td>
     </tr>
     <tr>
       <th scope="row">3</th>
       <td>Kora</td>
-      <td>Thornton</td>
+      <td>Lazy</td>
       <td>2014</td>
       <td>450</td>
     </tr>
     <tr>
       <th scope="row">4</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
+      <td>Viko</td>
+      <td>Alice in Wonderland</td>
       <td>2014</td>
       <td>450</td>
     </tr>
     <tr>
       <th scope="row">5</th>
       <td>Mica</td>
-      <td>Thornton</td>
+      <td>Harry Potter</td>
       <td>2014</td>
       <td>450</td>
     </tr>
     <tr>
       <th scope="row">6</th>
-      <td>Jacob</td>
+      <td>Tom</td>
       <td>Thornton</td>
       <td>2014</td>
       <td>450</td>
