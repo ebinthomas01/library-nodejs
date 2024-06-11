@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import NavBar from './NavBar'
+import axios from 'axios'
 
 const ViewAll = () => {
+  const [data,changeData] =useState([])
+        const fetchData=()=>{
+            axios.get("http://localhost:8081/view").then((response)=>{
+                changeData(response.data)
+            }
+        ).catch().finally()
+        }
+        useEffect(()=>{fetchData()},[])
   return (
     <div>
         <NavBar/>
@@ -9,60 +18,39 @@ const ViewAll = () => {
             <div className="row">
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Author</th>
-      <th scope="col">Title</th>
-      <th scope="col">Publish Year</th>
-      <th scope="col">Price</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>2014</td>
-      <td>450</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Rich dad poor dad</td>
-      <td>2015</td>
-      <td>450</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Kora</td>
-      <td>Lazy</td>
-      <td>2014</td>
-      <td>450</td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>Viko</td>
-      <td>Alice in Wonderland</td>
-      <td>2014</td>
-      <td>450</td>
-    </tr>
-    <tr>
-      <th scope="row">5</th>
-      <td>Mica</td>
-      <td>Harry Potter</td>
-      <td>2014</td>
-      <td>450</td>
-    </tr>
-    <tr>
-      <th scope="row">6</th>
-      <td>Tom</td>
-      <td>Thornton</td>
-      <td>2014</td>
-      <td>450</td>
-    </tr>
-  </tbody>
-</table>
+                                    <thead>
+                                        <tr>
+                                       
+                                        <th scope="col">BOOK TITLE</th>
+                                        <th scope="col">CATEGORY</th>
+                                        <th scope="col">AUTHOR</th>
+                                        <th scope="col">PUBLISH YEAR</th>
+                                        <th scope="col">PUBLISHER</th>
+                                        <th scope="col">PRICE</th>
+                                        
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                            {
+                                data.map(
+                                    
+                                    (value, index) => { return   <tr>
+                                                
+                                                <td>{value.booktitle}</td>
+                                                <td>{value.category}</td>
+                                                <td>{value.author}</td>
+                                                <td>{value.year}</td>
+                                                <td>{value.publisher}</td>
+                                                <td>{value.price}</td>
+                                                
+                                            </tr>
+                                            
+                                    }
+                                )
+                            }
+                            </tbody>
+                          </table>
+                
                 </div>
             </div>
         </div>
